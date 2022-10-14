@@ -24,11 +24,11 @@ requirements:
   run:
     - python
 
-# test:
-#   requires:
-#     - ruamel.yaml
-#   imports:
-#     - _ruamel_yaml
+test:
+  requires:
+    - ruamel.yaml
+  imports:
+    - _ruamel_yaml
 
 about:
   home: https://sourceforge.net/projects/ruamel-yaml-clib/
