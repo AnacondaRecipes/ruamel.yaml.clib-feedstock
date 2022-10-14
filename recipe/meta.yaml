@@ -36,6 +36,8 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: C version of reader, parser and emitter for ruamel.yaml derived from libyaml
+  doc_url: http://yaml.readthedocs.io
+  dev_url: https://sourceforge.net/projects/ruamel-yaml-clib/
 
 extra:
   recipe-maintainers:
