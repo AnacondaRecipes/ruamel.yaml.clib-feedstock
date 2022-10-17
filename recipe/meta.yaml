@@ -42,7 +42,7 @@ about:
     Apart from the C code seldom changing, and taking a long time to compile for all platforms, this allows
     installation of the .so on Linux systems under /usr/lib64/pythonX.Y (without a .pth file or a ruamel
     directory) and the Python code for ruamel.yaml under /usr/lib/pythonX.Y.
-  doc_url: http://yaml.readthedocs.io
+  doc_url: https://yaml.readthedocs.io
   dev_url: https://sourceforge.net/projects/ruamel-yaml-clib/
 
 extra:
