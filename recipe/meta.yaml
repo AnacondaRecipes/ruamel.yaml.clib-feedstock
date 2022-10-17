@@ -27,7 +27,10 @@ requirements:
 
 test:
   requires:
+    - pip
     - ruamel.yaml
+  commands:
+    - pip check
   imports:
     - _ruamel_yaml
 
