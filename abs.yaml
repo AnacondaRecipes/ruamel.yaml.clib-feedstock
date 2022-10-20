@@ -1,7 +1,0 @@
-channels:
-  mesters_org: ruamel.yaml
-build_parameters:
-  - "--suppress-variables"
-  - "--error-overlinking"
-  - "--error-overdepending"
-
