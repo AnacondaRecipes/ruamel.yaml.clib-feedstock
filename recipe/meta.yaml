@@ -1,15 +1,16 @@
-{% set version = "0.2.6" %}
+{% set name = "ruamel.yaml.clib" %}
+{% set version = "0.2.7" %}
 
 package:
-  name: ruamel.yaml.clib
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/r/ruamel.yaml.clib/ruamel.yaml.clib-{{ version }}.tar.gz
-  sha256: 4ff604ce439abb20794f05613c374759ce10e3595d1867764dd1ae675b85acbd
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ruamel.yaml.clib-{{ version }}.tar.gz
+  sha256: 1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: True  # [py<35]
   ignore_run_exports:
