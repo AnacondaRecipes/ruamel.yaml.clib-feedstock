@@ -10,7 +10,7 @@ source:
   sha256: 803f5044b13602d58ea378576dd75aa759f52116a0232608e8fdada4da33752e
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<39]
   script: 
     - cythonize _ruamel_yaml.pyx
