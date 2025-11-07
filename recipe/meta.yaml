@@ -11,8 +11,10 @@ source:
 
 build:
   number: 1
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip: true  # [py<39]
+  script: 
+    - cythonize _ruamel_yaml.pyx
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   ignore_run_exports:
     - python
 
@@ -30,13 +32,15 @@ requirements:
     - python
 
 test:
-  requires:
-    - pip
-    - ruamel.yaml  # [py<314]
+  # Use downstreams and importlib.util.find_spec instead of a usual import test
+  # since we have a yet-to-be-resolved cyclic dependency with ruamel.yaml because
+  # ruamel.yaml.clib needs the "ruamel.yaml" Python namespace package which is
+  # currently shipped with all other ruamel.yaml code in our ruamel.yaml package.
+  # See https://github.com/conda-forge/ruamel.yaml-feedstock/issues/119 for details.
+  downstreams:
+    - ruamel.yaml
   commands:
-    - pip check
-  imports:
-    - _ruamel_yaml
+    - python -c "from importlib.util import find_spec; assert find_spec('_ruamel_yaml')"
 
 about:
   home: https://sourceforge.net/projects/ruamel-yaml-clib/
